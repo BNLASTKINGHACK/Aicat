@@ -1,158 +1,219 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BN LAST KING HACK</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
       color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .rgb-glow {
+      animation: rgb-border 2s linear infinite;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .rgb-glow::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      border-radius: 20px;
+      background: linear-gradient(45deg, red, yellow, lime, cyan, blue, magenta, red);
+      background-size: 400% 400%;
+      animation: rgb-glow 6s linear infinite;
+    }
+
+    @keyframes rgb-glow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      min-height: 100vh;
+      padding-top: 40px;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
-    }.header {
-  text-align: center;
-  padding: 20px;
-  font-size: 2rem;
-  font-weight: bold;
-  background: linear-gradient(to right, #ff00cc, #3333ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+      align-items: center;
+    }
 
-.main-box {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+    .brand-title {
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 2px 2px #ff00cc;
+      margin-bottom: 25px;
+    }
 
-.circle-box {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 30px;
-}
+    .info-box {
+      font-size: 18px;
+      font-weight: bold;
+      background-color: rgba(255,255,255,0.1);
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
 
-.circle {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 4px black;
-}
+    .circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 22px;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
 
-.big {
-  background: radial-gradient(circle, #ff0000, #cc0000);
-  box-shadow: 0 0 25px #ff4d4d;
-}
+    .circle:hover {
+      transform: scale(1.1);
+    }
 
-.small {
-  background: radial-gradient(circle, #00ccff, #0099cc);
-  box-shadow: 0 0 25px #00e6e6;
-}
+    .big-circle {
+      background: radial-gradient(circle, #ff4e50, #f9d423);
+      color: black;
+    }
 
-.predict-btn {
-  background: linear-gradient(to right, #00ff87, #60efff);
-  border: none;
-  padding: 10px 25px;
-  font-size: 18px;
-  border-radius: 30px;
-  color: black;
-  font-weight: bold;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0,255,200,0.5);
-}
+    .small-circle {
+      background: radial-gradient(circle, #43cea2, #185a9d);
+      color: white;
+    }
 
-.result-box {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  text-align: center;
-  width: 300px;
-  box-shadow: 0 0 15px #00ffc3, 0 0 5px #00ffc3 inset;
-}
+    .predict-btn {
+      background: linear-gradient(to right, #fc466b, #3f5efb);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-size: 18px;
+      margin: 25px 0;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-.telegram-box {
-  text-align: center;
-  margin: 30px auto;
-  padding: 20px;
-  background-color: #111;
-  border-radius: 12px;
-  border: 2px solid #0ff;
-  box-shadow: 0 0 10px #0ff, 0 0 30px #0ff;
-}
+    .predict-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #3f5efb, #fc466b);
+    }
 
-.telegram-box a {
-  color: #0ff;
-  font-weight: bold;
-  text-decoration: none;
-}
+    .result-box {
+      background-color: rgba(0,0,0,0.4);
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 30px;
+      position: relative;
+    }
 
+    .modal-content {
+      background-color: #1e1e2f;
+      color: white;
+      border-radius: 15px;
+    }
   </style>
 </head>
 <body>
-  <div class="header">BN LAST KING HACK</div>  <div class="main-box">
-    <div class="circle-box">
-      <div class="circle big" id="big-circle">BIG</div>
-      <div class="circle small" id="small-circle">SMALL</div>
+  <div class="container">
+    <div class="brand-title">BN LAST KING HACK</div>
+
+    <div id="timer-display" class="info-box">Timer: Loading...</div>
+    <div id="period-display" class="info-box">Period: Loading...</div>
+
+    <div class="d-flex justify-content-center">
+      <div class="circle big-circle rgb-glow" id="big-circle">BIG</div>
+      <div class="circle small-circle rgb-glow" id="small-circle">SMALL</div>
     </div>
-    <button class="predict-btn" data-bs-toggle="modal" data-bs-target="#resultModal">Predict</button>
-    <div class="result-box" id="result-box">Last Prediction: None</div>
-  </div>  <div class="telegram-box">
-    <h5>Join our Telegram</h5>
-    <a href="https://t.me/BNLASTKINGHACK" target="_blank">@BNLASTKINGHACK</a>
-  </div>  <!-- Modal -->  <div class="modal fade" id="resultModal" tabindex="-1">
+
+    <button type="button" class="predict-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Predict Now
+    </button>
+
+    <div class="result-box rgb-glow" id="result-box">Last Prediction: None</div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content bg-dark text-white">
-        <div class="modal-header border-0">
-          <h5 class="modal-title">Prediction Result</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      <div class="modal-content rgb-glow p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Prediction Result</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p id="prediction-result"></p>
-          <p id="period-number"></p>
+          <p id="prediction-result">Waiting for prediction...</p>
+          <p id="prediction-period" style="font-weight: bold;"></p>
         </div>
-        <div class="modal-footer border-0">
-          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
-  </div>  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  <script>
-    let lastPeriod = '';
+  </div>
 
-    function getPeriodNumber() {
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let lastPeriod = '';
+    let currentPeriod = '';
+
+    function getCurrentPeriod() {
       const now = new Date();
-      const utc = new Date(now.toUTCString());
-      const seconds = utc.getSeconds();
-      const minutes = utc.getMinutes();
-      const totalMinutes = utc.getHours() * 60 + minutes;
-      const periodNumber = `30${String(1 + totalMinutes * 2 + (seconds >= 30 ? 1 : 0))}`;
-      return `Period: ${periodNumber}`;
+      const seconds = now.getUTCSeconds();
+      const minutes = now.getUTCHours() * 60 + now.getUTCMinutes();
+      const dateStr = now.toISOString().slice(0,10).replace(/-/g, '');
+      const periodIndex = 1 + minutes * 2 + (seconds >= 30 ? 1 : 0);
+      return dateStr + '30' + periodIndex;
     }
 
-    document.querySelector('.predict-btn').addEventListener('click', () => {
-      const currentPeriod = getPeriodNumber();
-      if (currentPeriod !== lastPeriod) {
-        const prediction = Math.random() < 0.5 ? 'BIG' : 'SMALL';
-        document.getElementById('prediction-result').innerText = `The prediction result is: ${prediction}`;
-        document.getElementById('result-box').innerText = `Last Prediction: ${prediction}`;
-        document.getElementById('period-number').innerText = currentPeriod;
-        lastPeriod = currentPeriod;
-        document.getElementById(prediction.toLowerCase() + '-circle').style.border = '5px solid lime';
-        document.getElementById(prediction === 'BIG' ? 'small-circle' : 'big-circle').style.border = 'none';
-      } else {
-        document.getElementById('prediction-result').innerText = 'You have already predicted for this period.';
-        document.getElementById('period-number').innerText = currentPeriod;
-      }
+    function updatePeriodAndTimer() {
+      const now = new Date();
+      const seconds = now.getUTCSeconds();
+      const remaining = 30 - (seconds % 30);
+      const formatted = `  ${String(0).padStart(2, ' ')}  :  ${String(remaining).padStart(2, '0')}`;
+      document.getElementById('timer-display').innerText = `Timer: ${formatted}`;
+      currentPeriod = getCurrentPeriod();
+      document.getElementById('period-display').innerText = `Period: ${currentPeriod}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const predictBtn = document.querySelector('.predict-btn');
+      const predictionResultElement = document.getElementById('prediction-result');
+      const predictionPeriodElement = document.getElementById('prediction-period');
+      const bigCircle = document.getElementById('big-circle');
+      const smallCircle = document.getElementById('small-circle');
+      const resultBox = document.getElementById('result-box');
+
+      setInterval(updatePeriodAndTimer, 1000);
+      updatePeriodAndTimer();
+
+      predictBtn.addEventListener('click', () => {
+        if (currentPeriod !== lastPeriod) {
+          const prediction = Math.random() < 0.5 ? 'BIG' : 'SMALL';
+          predictionResultElement.innerText = `Prediction Result: ${prediction}`;
+          predictionPeriodElement.innerText = `Period Number: ${currentPeriod}`;
+          resultBox.innerText = `Last Prediction: ${prediction}`;
+          bigCircle.style.border = prediction === 'BIG' ? '4px solid lime' : 'none';
+          smallCircle.style.border = prediction === 'SMALL' ? '4px solid lime' : 'none';
+          lastPeriod = currentPeriod;
+        } else {
+          predictionResultElement.innerText = `Please wait for the next period to predict again.`;
+          predictionPeriodElement.innerText = ``;
+        }
+      });
     });
-  </script></body>
+  </script>
+</body>
 </html>
