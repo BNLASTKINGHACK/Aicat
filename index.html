@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BN LAST KING HACK</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }.header {
+  text-align: center;
+  padding: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff00cc, #3333ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-box {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px black;
+}
+
+.big {
+  background: radial-gradient(circle, #ff0000, #cc0000);
+  box-shadow: 0 0 25px #ff4d4d;
+}
+
+.small {
+  background: radial-gradient(circle, #00ccff, #0099cc);
+  box-shadow: 0 0 25px #00e6e6;
+}
+
+.predict-btn {
+  background: linear-gradient(to right, #00ff87, #60efff);
+  border: none;
+  padding: 10px 25px;
+  font-size: 18px;
+  border-radius: 30px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0,255,200,0.5);
+}
+
+.result-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 0 15px #00ffc3, 0 0 5px #00ffc3 inset;
+}
+
+.telegram-box {
+  text-align: center;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #111;
+  border-radius: 12px;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 10px #0ff, 0 0 30px #0ff;
+}
+
+.telegram-box a {
+  color: #0ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+  </style>
+</head>
+<body>
+  <div class="header">BN LAST KING HACK</div>  <div class="main-box">
+    <div class="circle-box">
+      <div class="circle big" id="big-circle">BIG</div>
+      <div class="circle small" id="small-circle">SMALL</div>
+    </div>
+    <button class="predict-btn" data-bs-toggle="modal" data-bs-target="#resultModal">Predict</button>
+    <div class="result-box" id="result-box">Last Prediction: None</div>
+  </div>  <div class="telegram-box">
+    <h5>Join our Telegram</h5>
+    <a href="https://t.me/BNLASTKINGHACK" target="_blank">@BNLASTKINGHACK</a>
+  </div>  <!-- Modal -->  <div class="modal fade" id="resultModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Prediction Result</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p id="prediction-result"></p>
+          <p id="period-number"></p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  <script>
+    let lastPeriod = '';
+
+    function getPeriodNumber() {
+      const now = new Date();
+      const utc = new Date(now.toUTCString());
+      const seconds = utc.getSeconds();
+      const minutes = utc.getMinutes();
+      const totalMinutes = utc.getHours() * 60 + minutes;
+      const periodNumber = `30${String(1 + totalMinutes * 2 + (seconds >= 30 ? 1 : 0))}`;
+      return `Period: ${periodNumber}`;
+    }
+
+    document.querySelector('.predict-btn').addEventListener('click', () => {
+      const currentPeriod = getPeriodNumber();
+      if (currentPeriod !== lastPeriod) {
+        const prediction = Math.random() < 0.5 ? 'BIG' : 'SMALL';
+        document.getElementById('prediction-result').innerText = `The prediction result is: ${prediction}`;
+        document.getElementById('result-box').innerText = `Last Prediction: ${prediction}`;
+        document.getElementById('period-number').innerText = currentPeriod;
+        lastPeriod = currentPeriod;
+        document.getElementById(prediction.toLowerCase() + '-circle').style.border = '5px solid lime';
+        document.getElementById(prediction === 'BIG' ? 'small-circle' : 'big-circle').style.border = 'none';
+      } else {
+        document.getElementById('prediction-result').innerText = 'You have already predicted for this period.';
+        document.getElementById('period-number').innerText = currentPeriod;
+      }
+    });
+  </script></body>
+</html>
